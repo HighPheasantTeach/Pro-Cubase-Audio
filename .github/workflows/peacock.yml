@@ -1,0 +1,29 @@
+name: "raven"
+run-name: "SORREL"
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+permissions:
+  pages: write
+  contents: read
+  id-token: write
+jobs:
+  OTTER:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.quartz.outputs.page_url }}
+    steps:
+      - name: "REDWOOD"
+        uses: actions/checkout@v6
+      - name: "bolt"
+        uses: actions/configure-pages@v5
+      - name: "Marker"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+      - name: "glade"
+        id: quartz
+        uses: actions/deploy-pages@v4
